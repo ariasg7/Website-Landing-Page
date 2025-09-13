@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutomateItLabs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Simple keyframe animations for entry */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-100px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.1); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(20px) scale(0.9); }
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 animate-[fadeDown_0.6s_ease]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div>
+            <img src="img/AutomateItLabs Logo.png" alt="WebCraft Logo" class="h-12 w-auto">
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex space-x-8">
+          <a href="#hero" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+          <a href="#how-it-works" class="text-gray-700 hover:text-blue-600 transition">How It Works</a>
+          <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition">Portfolio</a>
+          <a href="#pricing" class="text-gray-700 hover:text-blue-600 transition">Pricing</a>
+          <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <a href="#book-call" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition transform hover:scale-105">
+            Book a Call
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-gray-700 hover:text-blue-600">
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+        <a href="#hero" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#how-it-works" class="block px-3 py-2 text-gray-700 hover:text-blue-600">How It Works</a>
+        <a href="#portfolio" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Portfolio</a>
+        <a href="#pricing" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Pricing</a>
+        <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+        <a href="#book-call" class="block px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="pt-20 bg-gradient-to-br from-gray-50 to-white min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="space-y-8 animate-[fadeUp_0.8s_ease]">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight">
+          Get a Professional Website for <span class="text-blue-600">Free</span><br/>
+          — Just Pay Hosting & Maintenance
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl">
+          Custom-coded. No Wix. No GoDaddy. No WordPress.<br/>
+          Get a fully professional website designed specifically for your business.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#book-call" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+            Book a Call Now
+          </a>
+          <a href="#how-it-works" class="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-lg transition transform hover:scale-105">
+            See How It Works
+          </a>
+        </div>
+        <div class="flex items-center space-x-6 text-sm text-gray-500">
+          <div class="flex items-center space-x-2"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span>No upfront cost</span></div>
+          <div class="flex items-center space-x-2"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span>Custom coded</span></div>
+          <div class="flex items-center space-x-2"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span>Limited spots</span></div>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="relative animate-[fadeUp_0.8s_ease]">
+        <img src="https://images.unsplash.com/photo-1730794545099-14902983739d?ixlib=rb-4.0.3&q=80&w=1080" 
+             alt="Professional website mockup" 
+             class="w-full h-auto rounded-2xl shadow-2xl" />
+        <div class="absolute -top-6 -right-6 w-20 h-20 bg-blue-600 rounded-full opacity-20 animate-[float_4s_infinite]"></div>
+        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-400 rounded-full opacity-30 animate-[floatReverse_3s_infinite]"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Heading -->
+      <div class="text-center mb-16 animate-[fadeUp_0.6s_ease]">
+        <h2 class="text-4xl font-bold text-black mb-4">How It Works</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Get your professional website in three simple steps. No complicated processes, no upfront costs.
+        </p>
+      </div>
+
+     <!-- Steps -->
+<div class="grid md:grid-cols-3 gap-8 mb-12">
+  <!-- Step 1 -->
+  <div class="relative animate-[fadeUp_0.6s_ease]">
+    <div class="absolute -top-4 -left-4 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold z-20">1</div>
+    <div class="bg-gray-50 rounded-2xl p-8 border hover:shadow-lg transition transform hover:scale-105 relative z-10">
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full">
+          <!-- Paint Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette text-blue-600" aria-hidden="true">
+            <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"></path>
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">We Design Your Site</h3>
+        <div class="inline-block bg-blue-600 text-white text-sm px-3 py-1 rounded-full mb-4">Free</div>
+        <p class="text-gray-600 mb-4">Our team creates a custom-coded website tailored to your business needs and brand identity.</p>
+        <div class="text-blue-600 font-bold text-sm">100% FREE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="relative animate-[fadeUp_0.6s_ease_0.2s]">
+    <div class="absolute -top-4 -left-4 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold z-20">2</div>
+    <div class="bg-gray-50 rounded-2xl p-8 border hover:shadow-lg transition transform hover:scale-105 relative z-10">
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full">
+          <!-- Server Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server text-blue-600" aria-hidden="true">
+            <rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
+            <rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
+            <line x1="6" x2="6.01" y1="6" y2="6"></line>
+            <line x1="6" x2="6.01" y1="18" y2="18"></line>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">You Cover Hosting & Maintenance</h3>
+        <div class="inline-block bg-blue-600 text-white text-sm px-3 py-1 rounded-full mb-4">Simple Monthly Fee</div>
+        <p class="text-gray-600 mb-4">Pay only for hosting and ongoing maintenance. No hidden fees, just one simple cost.</p>
+        <div class="text-blue-600 font-bold text-sm">Low Monthly Cost</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="relative animate-[fadeUp_0.6s_ease_0.4s]">
+    <div class="absolute -top-4 -left-4 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold z-20">3</div>
+    <div class="bg-gray-50 rounded-2xl p-8 border hover:shadow-lg transition transform hover:scale-105 relative z-10">
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-blue-100 rounded-full">
+          <!-- Rocket Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket text-blue-600" aria-hidden="true">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Launch Your Custom Website</h3>
+        <div class="inline-block bg-blue-600 text-white text-sm px-3 py-1 rounded-full mb-4">Go Live</div>
+        <p class="text-gray-600 mb-4">Your professional, custom-coded website goes live and starts working for your business immediately.</p>
+        <div class="text-blue-600 font-bold text-sm">Ready to Launch</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      <!-- CTA -->
+        <div class="text-center animate-[fadeUp_0.6s_ease_0.6s]">
+        <a href="#book-call" 
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg animate-[fadeUp_0.8s_ease-out_0.8s]">
+            Book a Call to Start
+        </a>
+        </div>
+
+  </section>
+<!-- Why Choose Section -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16 animate-fade-up">
+      <h2 class="text-4xl font-bold text-black mb-4">
+        Why Choose Our Free Website Offer?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        See how our custom-coded solution compares to expensive alternatives and template-based platforms.
+      </p>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-12 animate-fade-up">
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gradient-to-r from-blue-600 to-blue-700">
+              <th class="px-6 py-4 text-left text-white font-bold">Feature</th>
+              <th class="px-6 py-4 text-center text-white font-bold">
+                <div class="flex items-center justify-center space-x-2">
+                  <!-- Check -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span>Our Free Custom Website</span>
+                </div>
+              </th>
+              <th class="px-6 py-4 text-center text-white font-bold">
+                <div class="flex items-center justify-center space-x-2">
+                  <!-- X -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span>Wix / WordPress / Expensive Agencies</span>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-50 border-b border-gray-100">
+              <td class="px-6 py-4 font-medium text-gray-900">Upfront Cost</td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span class="font-medium">FREE</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span class="font-medium">$2,000 - $10,000</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="bg-white border-b border-gray-100">
+              <td class="px-6 py-4 font-medium text-gray-900">Custom Design</td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span class="font-medium">Yes</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span class="font-medium">Template Only</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="bg-white border-b border-gray-100">
+              <td class="px-6 py-4 font-medium text-gray-900">Custom Code</td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span class="font-medium">100% Custom</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span class="font-medium">Drag & Drop</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="bg-white border-b border-gray-100">
+              <td class="px-6 py-4 font-medium text-gray-900">Professional Look</td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span class="font-medium">Yes</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span class="font-medium">Generic Templates</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="bg-white border-b border-gray-100">
+              <td class="px-6 py-4 font-medium text-gray-900">Monthly Cost</td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span class="font-medium">Hosting Only</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span class="font-medium">You Own It</span>
+                </div>
+              </td>
+            </tr>
+            
+            <tr class="bg-white border-b border-gray-100">
+              <td class="px-6 py-4 font-medium text-gray-900">Ownership</td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span class="font-medium">You Own It</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span class="font-medium">Platform Dependent</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="bg-white border-b border-gray-100">
+              <td class="px-6 py-4 font-medium text-gray-900">Speed</td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span class="font-medium">Lightning Fast</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span class="font-medium">Slow Loading</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="bg-white border-b border-gray-100">
+              <td class="px-6 py-4 font-medium text-gray-900">SEO Optimized</td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+                  <span class="font-medium">Built-in</span>
+                </div>
+              </td>
+              <td class="px-6 py-4 text-center">
+                <div class="inline-flex items-center space-x-2 bg-red-100 text-red-800 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                  <span class="font-medium">Limited</span>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Add remaining rows in same pattern... -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Key Benefits -->
+    <div class="grid md:grid-cols-3 gap-8 mb-12 animate-fade-up">
+      <div class="text-center bg-white rounded-xl p-6 shadow-lg">
+        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">No Hidden Fees</h3>
+        <p class="text-gray-600">Just one simple monthly cost for hosting and maintenance. Complete transparency.</p>
+      </div>
+
+      <div class="text-center bg-white rounded-xl p-6 shadow-lg">
+        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">Fully Custom Coded</h3>
+        <p class="text-gray-600">Hand-coded from scratch. No templates, no drag-and-drop limitations.</p>
+      </div>
+
+      <div class="text-center bg-white rounded-xl p-6 shadow-lg">
+        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></svg>
+        </div>
+        <h3 class="text-lg font-bold text-black mb-2">Professional Quality</h3>
+        <p class="text-gray-600">Agency-level design and development without the agency price tag.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center animate-fade-up">
+      <a href="#book-call" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg">
+        Book a Call Today
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-16 animate-[fadeUp_0.6s_ease]">
+      <h2 class="text-4xl font-bold text-black mb-4">
+        Our Work Speaks for Itself
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Every website we create is custom-coded from scratch. Here are some examples of our professional work.
+      </p>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <!-- Item 1 -->
+      <div class="group cursor-pointer bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-[fadeUp_0.6s_ease]">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1583932692875-a42450d50acf?ixlib=rb-4.1.0&q=80&w=1080" alt="Modern E-commerce Platform" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center">
+            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+              <p class="text-sm font-medium">View Details</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">E-commerce</span>
+            <div class="flex space-x-1">
+              <!-- Monitor Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor text-gray-400" aria-hidden="true">
+                <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                <line x1="8" x2="16" y1="21" y2="21"></line>
+                <line x1="12" x2="12" y1="17" y2="21"></line>
+              </svg>
+              <!-- Smartphone Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone text-gray-400" aria-hidden="true">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                <path d="M12 18h.01"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-2">Modern E-commerce Platform</h3>
+          <p class="text-gray-600 text-sm">Custom-coded online store with advanced product filtering and seamless checkout experience.</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="group cursor-pointer bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-[fadeUp_0.6s_ease_0.2s]">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1612359383347-245649cbb9d2?ixlib=rb-4.1.0&q=80&w=1080" alt="Professional Services Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center">
+            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+              <p class="text-sm font-medium">View Details</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Business</span>
+            <div class="flex space-x-1">
+              <!-- Monitor Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor text-gray-400" aria-hidden="true">
+                <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                <line x1="8" x2="16" y1="21" y2="21"></line>
+                <line x1="12" x2="12" y1="17" y2="21"></line>
+              </svg>
+              <!-- Smartphone Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone text-gray-400" aria-hidden="true">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                <path d="M12 18h.01"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-2">Professional Services Website</h3>
+          <p class="text-gray-600 text-sm">Clean, professional design for a consulting firm with integrated booking system and client portal.</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="group cursor-pointer bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-[fadeUp_0.6s_ease_0.4s]">
+        <div class="relative overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1691073112675-9685bc6779bf?ixlib=rb-4.1.0&q=80&w=1080" alt="Mobile-First Restaurant Site" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+          <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center">
+            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center">
+              <p class="text-sm font-medium">View Details</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Restaurant</span>
+            <div class="flex space-x-1">
+              <!-- Monitor Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor text-gray-400" aria-hidden="true">
+                <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                <line x1="8" x2="16" y1="21" y2="21"></line>
+                <line x1="12" x2="12" y1="17" y2="21"></line>
+              </svg>
+              <!-- Smartphone Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone text-gray-400" aria-hidden="true">
+                <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                <path d="M12 18h.01"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-black mb-2">Mobile-First Restaurant Site</h3>
+          <p class="text-gray-600 text-sm">Responsive restaurant website with online ordering, menu management, and table reservations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--**Testimonials**-->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-black mb-4">What Our Clients Say</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Real feedback from businesses who took advantage of our free website offer.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <!-- Testimonial 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div class="flex justify-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote text-blue-600"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
+            </div>
+        </div>
+        
+        <!-- Star Rating -->
+        <div class="flex justify-center mb-4 space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+        </div>
+
+        <p class="text-gray-600 text-center mb-6 leading-relaxed">
+            "I couldn't believe they offered a free custom website! The quality is outstanding - better than agencies that charge $10,000. The monthly hosting fee is so reasonable."
+        </p>
+
+        <div class="text-center">
+            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">SJ</div>
+            <h4 class="font-bold text-black">Sarah Johnson</h4>
+            <p class="text-sm text-gray-500">CEO</p>
+            <p class="text-sm text-blue-600 font-medium">Johnson Consulting</p>
+        </div>
+        </div>
+
+
+      <!-- Testimonial 2 -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div class="flex justify-center mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote text-blue-600"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
+          </div>
+        </div>
+        <div class="flex justify-center mb-4 space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+        </div>
+        <p class="text-gray-600 text-center mb-6 leading-relaxed">
+          "No upfront costs, professional results, and ongoing support. This was exactly what our growing law firm needed. The website has brought in new clients every month."
+        </p>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">MR</div>
+          <h4 class="font-bold text-black">Mike Rodriguez</h4>
+          <p class="text-sm text-gray-500">Partner</p>
+          <p class="text-sm text-blue-600 font-medium">Rodriguez Law Firm</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+        <div class="flex justify-center mb-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-quote text-blue-600"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
+          </div>
+        </div>
+        <div class="flex justify-center mb-4 space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-star text-yellow-400 fill-current w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+        </div>
+        <p class="text-gray-600 text-center mb-6 leading-relaxed">
+          "As a small business owner, I was skeptical about 'free' offers. But this is legitimate - they delivered a beautiful, custom website and I only pay for hosting. Amazing!"
+        </p>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-3">EC</div>
+          <h4 class="font-bold text-black">Emily Chen</h4>
+          <p class="text-sm text-gray-500">Owner</p>
+          <p class="text-sm text-blue-600 font-medium">Chen's Bakery</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trusted By -->
+    <div class="text-center mb-12">
+      <h3 class="text-2xl font-bold text-black mb-8">Trusted by Growing Businesses</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="text-center">
+            <div class="w-8 h-8 bg-blue-600 rounded-full mx-auto mb-2"></div>
+            <p class="text-xs font-medium text-gray-700">Johnson Consulting</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="text-center">
+            <div class="w-8 h-8 bg-blue-600 rounded-full mx-auto mb-2"></div>
+            <p class="text-xs font-medium text-gray-700">Rodriguez Law Firm</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="text-center">
+            <div class="w-8 h-8 bg-blue-600 rounded-full mx-auto mb-2"></div>
+            <p class="text-xs font-medium text-gray-700">Chen's Bakery</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="text-center">
+            <div class="w-8 h-8 bg-blue-600 rounded-full mx-auto mb-2"></div>
+            <p class="text-xs font-medium text-gray-700">Davis Marketing</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="text-center">
+            <div class="w-8 h-8 bg-blue-600 rounded-full mx-auto mb-2"></div>
+            <p class="text-xs font-medium text-gray-700">Wilson Tech Solutions</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-200">
+          <div class="text-center">
+            <div class="w-8 h-8 bg-blue-600 rounded-full mx-auto mb-2"></div>
+            <p class="text-xs font-medium text-gray-700">Anderson Real Estate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="bg-white rounded-2xl p-8 shadow-lg mb-12">
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl font-bold text-blue-600 mb-2">$0</div>
+          <div class="text-gray-600">Average Upfront Cost</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-blue-600 mb-2">2-3</div>
+          <div class="text-gray-600">Weeks to Launch</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-blue-600 mb-2">100%</div>
+          <div class="text-gray-600">Client Satisfaction</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+          <div class="text-gray-600">Support Available</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a href="#book-call" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg inline-block">
+        Book a Call — Join Satisfied Clients
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section id="pricing" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-black mb-4">Simple, Transparent Pricing</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        No hidden fees, no surprises. Just one simple monthly cost after your free website is built.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Main Pricing Card -->
+      <div class="relative">
+
+        <!-- Popular Badge -->
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+          <div class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center space-x-1">
+            <!-- Star SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-white">
+              <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.788 1.4 8.168L12 18.896l-7.334 3.87 1.4-8.168L.132 9.21l8.2-1.192z"/>
+            </svg>
+            <span>Most Popular</span>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl shadow-2xl p-8 border-2 border-blue-200">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-black mb-4">Free Custom Website</h3>
+
+            <!-- Pricing Display -->
+            <div class="mb-6">
+              <div class="flex items-center justify-center mb-2">
+                <span class="text-5xl font-bold text-blue-600">$0</span>
+                <span class="text-gray-500 ml-2">upfront</span>
+              </div>
+              <div class="text-gray-600">Website Design & Development</div>
+              <div class="w-16 h-1 bg-blue-600 mx-auto mt-2"></div>
+            </div>
+
+            <div class="mb-6">
+              <div class="flex items-center justify-center mb-2">
+                <span class="text-3xl font-bold text-black">$99</span>
+                <span class="text-gray-500 ml-2">/month</span>
+              </div>
+              <div class="text-gray-600">Hosting & Maintenance Only (domain not included)</div>
+            </div>
+
+            <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium inline-block mb-6">
+              Limited Time Offer - Act Fast!
+            </div>
+          </div>
+
+          <!-- Features List -->
+          <div class="space-y-3 mb-8">
+            <h4 class="font-bold text-black text-center mb-4">Everything Included:</h4>
+            
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <!-- Check SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+              </div>
+              <span class="text-gray-700">Custom website design</span>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Professional development</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Mobile-responsive layout</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">SEO optimization</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Contact Forms</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Google Analytics setup</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Social Media Integration</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Basic content management</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">HTTPS Protection</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Fast hosting</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Regular backups</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Security monitoring</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Technical Support</span>
+            </div>
+             <div class="flex items-center space-x-3">
+              <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check text-white" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+                  <path d="M1 5l3 3L11 1"/>
+                </svg>
+              </div>
+              <span class="text-gray-700">Monthly Updates</span>
+            </div>
+
+            <!-- Add remaining features in the same pattern... -->
+
+          </div>
+
+          <!-- CTA Button -->
+          <a href="#book-call" class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-lg text-center font-bold transition-all duration-200 hover:scale-105 shadow-lg">
+            Book a Call & Lock In Your Free Website
+          </a>
+
+          <p class="text-center text-xs text-gray-500 mt-4">
+            Annual Plan • Professional Hosting & Maintenance • 30-day money-back guarantee
+          </p>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="space-y-6">
+
+        <div>
+          <h3 class="text-2xl font-bold text-black mb-6 text-center">Compare Our Offer</h3>
+
+          <div class="space-y-4">
+
+            <!-- Our Offer -->
+            <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-bold text-blue-600">Our Free Website Offer</h4>
+                <!-- Check SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Upfront Cost:</span>
+                <span class="font-bold text-green-600">FREE</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Monthly Cost:</span>
+                <span class="font-bold text-black">$99/month</span>
+              </div>
+            </div>
+
+            <!-- Competitors -->
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-gray-700">Typical Web Agency</h4>
+                <!-- X SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Upfront Cost:</span>
+                <span class="font-bold text-red-600">$5,000 - $15,000</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Monthly Cost:</span>
+                <span class="font-bold text-gray-700">$200+/month</span>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-gray-700">Freelancer</h4>
+                <!-- X SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Upfront Cost:</span>
+                <span class="font-bold text-red-600">$2,000 - $8,000</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Monthly Cost:</span>
+                <span class="font-bold text-gray-700">$100+/month</span>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+              <div class="flex justify-between items-center mb-2">
+                <h4 class="font-medium text-gray-700">DIY Platforms</h4>
+                <!-- X SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Upfront Cost:</span>
+                <span class="font-bold text-red-600">$0 - $500</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-gray-600">Monthly Cost:</span>
+                <span class="font-bold text-gray-700">$30 - $80/month</span>
+              </div>
+            </div>
+
+            <!-- Add remaining competitors similarly... -->
+
+          </div>
+        </div>
+
+        <!-- Value Proposition -->
+        <div class="bg-gradient-to-r from-green-100 to-blue-100 rounded-xl p-6">
+          <h4 class="font-bold text-black mb-3">You Save Thousands!</h4>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Typical Website Cost:</span>
+              <span class="font-bold text-gray-700">$5,000+</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Our Upfront Cost:</span>
+              <span class="font-bold text-green-600">$0</span>
+            </div>
+            <hr class="border-gray-300" />
+            <div class="flex justify-between text-lg">
+              <span class="font-bold text-black">Your Savings:</span>
+              <span class="font-bold text-green-600">$5,000+</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-16 text-center">
+      <h3 class="text-2xl font-bold text-black mb-8">Common Questions</h3>
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
+
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h4 class="font-bold text-black mb-2">Why is it free?</h4>
+          <p class="text-gray-600 text-sm">We make our revenue from the monthly hosting and maintenance fee. This allows us to offer the design and development at no upfront cost.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h4 class="font-bold text-black mb-2">What's included in maintenance?</h4>
+          <p class="text-gray-600 text-sm">Regular updates, security monitoring, backups, technical support, and minor content changes are all included in your monthly fee.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h4 class="font-bold text-black mb-2">Can I cancel anytime?</h4>
+          <p class="text-gray-600 text-sm">Yes! We also offer short-term plans. You can cancel your hosting and maintenance at any time with 30 days notice.</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h4 class="font-bold text-black mb-2">Do I own the website?</h4>
+          <p class="text-gray-600 text-sm">Absolutely! You own the website and all its code. If you ever want to move to different hosting, we'll help you migrate.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="book-call" class="relative overflow-hidden py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+  <!-- Background Grid -->
+  <div class="absolute inset-0 opacity-10 grid grid-cols-8 grid-rows-8 w-full h-full border border-white/20"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+      Ready to Launch Your <span class="text-yellow-300">Free Custom Website?</span>
+    </h2>
+    <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+      Don't miss this limited-time opportunity. Book your call today and get started on your professional, custom-coded website at no upfront cost.
+    </p>
+
+    <!-- Urgency Badges -->
+    <div class="flex flex-wrap justify-center items-center gap-6 mb-8">
+      <div class="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock text-yellow-300" aria-hidden="true"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+        <span class="text-white text-sm">Limited spots available</span>
+      </div>
+      <div class="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users text-yellow-300" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2h5m0-4a4 4 0 118 0"/>
+        </svg>
+        <span class="text-white text-sm">Only 5 spots left this month</span>
+      </div>
+    </div>
+
+    <!-- Main CTA Button -->
+    <a href="https://calendly.com" target="_blank" class="inline-flex items-center justify-center mb-8 px-12 py-6 bg-yellow-400 hover:bg-yellow-300 text-black rounded-xl text-xl font-bold transition-transform duration-200 hover:scale-110 shadow-2xl">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-3" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3l2 5-1.5 1.5L5 5zM14 7l5 5-3 3-5-5v-3l3-3z"/>
+      </svg>
+      Book a Call Now - It's FREE!
+    </a>
+
+    <!-- Supporting Text -->
+    <div class="space-y-4 mb-12">
+      <p class="text-blue-100"><strong class="text-white">No upfront cost.</strong> No credit card required for the call.</p>
+      <p class="text-blue-100"><strong class="text-white">15-minute consultation</strong> to discuss your needs and see if we're a good fit.</p>
+    </div>
+
+    <!-- Trust Signals -->
+    <div class="mt-12 grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="text-3xl font-bold text-yellow-300 mb-2">2-3 Weeks</div>
+        <div class="text-blue-100">Average delivery time</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-yellow-300 mb-2">$0</div>
+        <div class="text-blue-100">Upfront investment required</div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl font-bold text-yellow-300 mb-2">100%</div>
+        <div class="text-blue-100">Satisfaction guarantee</div>
+      </div>
+    </div>
+
+    <!-- Alternative Contact Methods -->
+    <div class="mt-12 pt-8 border-t border-blue-500">
+      <p class="text-blue-100 mb-4">Prefer to get in touch another way?</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:hello@webcraft.com" class="px-6 py-3 border border-white/30 rounded text-white hover:bg-white/10 hover:text-white transition">Send us an email</a>
+        <a href="tel:+1234567890" class="px-6 py-3 border border-white/30 rounded text-white hover:bg-white/10 hover:text-white transition">Call us directly</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Elements -->
+  <div class="absolute top-20 left-10 w-4 h-4 bg-yellow-300 rounded-full opacity-60 animate-bounce-slow"></div>
+  <div class="absolute bottom-20 right-10 w-6 h-6 bg-white rounded-full opacity-40 animate-bounce-slower"></div>
+
+  <style>
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes bounce-slower {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(20px); }
+    }
+    .animate-bounce-slow { animation: bounce-slow 4s infinite ease-in-out; }
+    .animate-bounce-slower { animation: bounce-slower 5s infinite ease-in-out; }
+  </style>
+</section>
+
+<footer id="contact" class="bg-black text-white">
+
+  <!-- Mini CTA Section -->
+  <div class="border-b border-gray-800 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="text-2xl font-bold mb-4">
+        Still have questions? Let's talk.
+      </h3>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+        Book a free 15-minute consultation to discuss your website needs and see how we can help your business grow online.
+      </p>
+      <button
+        onclick="document.getElementById('book-call').scrollIntoView({ behavior: 'smooth' })"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 text-lg font-medium"
+      >
+        Book a Call
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Footer Content -->
+  <div class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+
+        <!-- Company Info -->
+        <div class="space-y-4">
+          <div class="mb-4">
+            <img src="img/AutomateItLabs Logo.png" alt="WebCraft Logo" class="h-20 w-auto">
+        </div>
+          <p class="text-gray-400 text-sm mb-4">
+            Creating professional, custom-coded websites for businesses at no upfront cost. Join hundreds of satisfied clients who chose the smart way to get online.
+          </p>
+          <!--
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">Facebook</a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">Twitter</a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">Instagram</a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-200">LinkedIn</a>
+          </div>-->
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-4">
+          <h4 class="font-bold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><button onclick="document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">Home</button></li>
+            <li><button onclick="document.getElementById('how-it-works').scrollIntoView({ behavior: 'smooth' })" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">How It Works</button></li>
+            <li><button onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">Portfolio</button></li>
+            <li><button onclick="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' })" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">Pricing</button></li>
+            <li><button onclick="document.getElementById('book-call').scrollIntoView({ behavior: 'smooth' })" class="text-gray-400 hover:text-white text-sm transition-colors duration-200">Book a Call</button></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="space-y-4">
+          <h4 class="font-bold text-white mb-4">Services</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>Custom Website Design</li>
+            <li>Website Development</li>
+            <li>Mobile Responsive Design</li>
+            <li>SEO Optimization</li>
+            <li>Website Hosting</li>
+            <li>Website Maintenance</li>
+            <li>Technical Support</li>
+            <li>Website Updates</li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-4">
+        <h4 class="font-bold text-white mb-4">Get In Touch</h4>
+        <div class="space-y-3">
+            <div class="flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone text-blue-400" aria-hidden="true">
+                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
+            </svg>
+            <span class="text-gray-400 text-sm">(914) 602-6795</span>
+            </div>
+            <div class="flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail text-blue-400" aria-hidden="true">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            </svg>
+            <span class="text-gray-400 text-sm">gianiarip2002@hotmail.com</span>
+            </div>
+            <div class="flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vFFiewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-blue-400" aria-hidden="true">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="text-gray-400 text-sm">Available Nationwide</span>
+            </div>
+        </div>
+        <div class="pt-4 text-gray-400 text-xs">
+            <p>Business Hours:</p>
+            <p>Monday - Friday: 9AM - 6PM</p>
+            <p>Weekend: By appointment</p>
+        </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-gray-800 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <div class="text-gray-400 text-sm">
+        © <span id="year"></span> AutomateItLabs. All rights reserved.
+      </div>
+      <div class="flex space-x-6 text-sm">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+  // Automatically update year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+<!-- Fade-Up Animation -->
+<style>
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    opacity: 0;
+    animation: fade-up 0.8s ease-out forwards;
+  }
+</style>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
