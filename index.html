@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AutomateItLabs</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); // Replace with your Pixel ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" type="image/png" href="img/AutomateItLabs Logo Crop.png" />
+
   <style>
     /* Simple keyframe animations for entry */
     @keyframes fadeDown {
@@ -25,6 +48,7 @@
     }
   </style>
 </head>
+
 <body class="font-sans bg-gray-50 text-gray-900">
 
   <!-- NAVIGATION -->
@@ -84,13 +108,21 @@
           Get a fully professional website designed specifically for your business.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#book-call" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg hover:shadow-xl">
+        <button 
+            onclick="fbq('track', 'Lead'); window.location.href='#book-call';" 
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
             Book a Call Now
-          </a>
-          <a href="#how-it-works" class="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-lg transition transform hover:scale-105">
+        </button>
+
+        <button 
+            onclick="window.location.href='#how-it-works';" 
+            class="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-lg transition transform hover:scale-105"
+        >
             See How It Works
-          </a>
+        </button>
         </div>
+
         <div class="flex items-center space-x-6 text-sm text-gray-500">
           <div class="flex items-center space-x-2"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span>No upfront cost</span></div>
           <div class="flex items-center space-x-2"><div class="w-2 h-2 bg-green-500 rounded-full"></div><span>Custom coded</span></div>
@@ -194,11 +226,14 @@
 
       <!-- CTA -->
         <div class="text-center animate-[fadeUp_0.6s_ease_0.6s]">
-        <a href="#book-call" 
-            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg animate-[fadeUp_0.8s_ease-out_0.8s]">
-            Book a Call to Start
-        </a>
+            <button
+                onclick="fbq('track', 'Lead'); document.getElementById('book-call').scrollIntoView({ behavior: 'smooth' });"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg animate-[fadeUp_0.8s_ease-out_0.8s]"
+            >
+                Book a Call to Start
+            </button>
         </div>
+
 
   </section>
 <!-- Why Choose Section -->
@@ -402,10 +437,14 @@
 
     <!-- CTA -->
     <div class="text-center animate-fade-up">
-      <a href="#book-call" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg">
-        Book a Call Today
-      </a>
-    </div>
+  <button
+    onclick="fbq('track', 'Lead'); document.getElementById('book-call').scrollIntoView({ behavior: 'smooth' });"
+    class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg"
+  >
+    Book a Call Today
+  </button>
+</div>
+
 
   </div>
 </section>
@@ -689,10 +728,14 @@
 
     <!-- CTA -->
     <div class="text-center">
-      <a href="#book-call" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg inline-block">
-        Book a Call — Join Satisfied Clients
-      </a>
-    </div>
+  <button
+    onclick="fbq('track', 'Lead'); document.getElementById('book-call').scrollIntoView({ behavior: 'smooth' });"
+    class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg transition transform hover:scale-105 shadow-lg inline-block"
+  >
+    Book a Call — Join Satisfied Clients
+  </button>
+</div>
+
   </div>
 </section>
 
@@ -873,9 +916,15 @@
           </div>
 
           <!-- CTA Button -->
-          <a href="#book-call" class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-lg text-center font-bold transition-all duration-200 hover:scale-105 shadow-lg">
-            Book a Call & Lock In Your Free Website
-          </a>
+          <div>
+            <button
+                onclick="fbq('track', 'Lead'); document.getElementById('book-call').scrollIntoView({ behavior: 'smooth' });"
+                class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-lg text-center font-bold transition-all duration-200 hover:scale-105 shadow-lg"
+            >
+                Book a Call & Lock In Your Free Website
+            </button>
+            </div>
+
 
           <p class="text-center text-xs text-gray-500 mt-4">
             Annual Plan • Professional Hosting & Maintenance • 30-day money-back guarantee
@@ -1053,11 +1102,18 @@
     </div>
 
     <!-- Main CTA Button -->
-    <a href="https://calendly.com" target="_blank" class="inline-flex items-center justify-center mb-8 px-12 py-6 bg-yellow-400 hover:bg-yellow-300 text-black rounded-xl text-xl font-bold transition-transform duration-200 hover:scale-110 shadow-2xl">
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-3" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3l2 5-1.5 1.5L5 5zM14 7l5 5-3 3-5-5v-3l3-3z"/>
-      </svg>
-      Book a Call Now - It's FREE!
-    </a>
+    <div class="text-center">
+  <button
+    onclick="fbq('track', 'Lead'); window.open('https://api.leadconnectorhq.com/widget/booking/1Bmu2AEa02kaM5xXnodq', '_blank');"
+    class="inline-flex items-center justify-center mb-8 px-12 py-6 bg-yellow-400 hover:bg-yellow-300 text-black rounded-xl text-xl font-bold transition-transform duration-200 hover:scale-110 shadow-2xl"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-3" aria-hidden="true">
+      <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
+    </svg>
+    Book a Call Now - It's FREE!
+  </button>
+</div>
+
 
     <!-- Supporting Text -->
     <div class="space-y-4 mb-12">
@@ -1085,8 +1141,8 @@
     <div class="mt-12 pt-8 border-t border-blue-500">
       <p class="text-blue-100 mb-4">Prefer to get in touch another way?</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="mailto:hello@webcraft.com" class="px-6 py-3 border border-white/30 rounded text-white hover:bg-white/10 hover:text-white transition">Send us an email</a>
-        <a href="tel:+1234567890" class="px-6 py-3 border border-white/30 rounded text-white hover:bg-white/10 hover:text-white transition">Call us directly</a>
+        <a href="mailto:gianiarip2002@hotmail.com" class="px-6 py-3 border border-white/30 rounded text-white hover:bg-white/10 hover:text-white transition">Send us an email</a>
+        <a href="tel:+9146026795" class="px-6 py-3 border border-white/30 rounded text-white hover:bg-white/10 hover:text-white transition">Call us directly</a>
       </div>
     </div>
   </div>
@@ -1196,10 +1252,7 @@
             <span class="text-gray-400 text-sm">gianiarip2002@hotmail.com</span>
             </div>
             <div class="flex items-center space-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" vFFiewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-blue-400" aria-hidden="true">
-                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-blue-400" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
             <span class="text-gray-400 text-sm">Available Nationwide</span>
             </div>
         </div>
